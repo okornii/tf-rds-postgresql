@@ -91,7 +91,7 @@ variable "subnet_group" {
 }
 
 variable "parameter_group" {
-  default = "default.postgres9.4"
+  default = "defaultpostgres94"
 }
 
 variable "security_group_id" {
