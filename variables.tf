@@ -26,7 +26,10 @@ variable "iops" {
   default = "0"
 }
 
-variable "vpc_id" {}
+variable "vpc_id" {
+  type = "list"
+  default = [""]
+}
 
 variable "database_identifier" {}
 
