@@ -95,8 +95,7 @@ variable "parameter_group" {
 }
 
 variable "security_group_id" {
-  type = "list"
-  default = [""]
+  default = ""
 }
 
 variable "subnets" {
