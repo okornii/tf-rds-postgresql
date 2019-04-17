@@ -1,6 +1,11 @@
 #
 # RDS resources
 #
+resource "null_resource" "dependency_getter" {
+  provisioner "local-exec" {
+    command = "echo ${length(var.dependencies)}"
+  }
+}
 resource "aws_db_instance" "postgresql" {
   allocated_storage = "${var.allocated_storage}"
   engine = "postgres"
@@ -32,5 +37,8 @@ resource "aws_db_instance" "postgresql" {
     Project = "${var.project}"
     Environment = "${terraform.workspace}"
   }
+  depends_on = [
+    "null_resource.dependency_getter",
+  ]
 }
 
