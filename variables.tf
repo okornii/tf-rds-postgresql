@@ -102,3 +102,6 @@ variable "subnets" {
   default = ""
 
 }
+variable "dependencies" {
+  type = "list"
+}
