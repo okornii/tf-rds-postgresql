@@ -84,7 +84,8 @@ variable "storage_encrypted" {
 
 
 variable "subnet_group" {
-  default = "default"
+  type = "list"
+  default = ["default"]
 }
 
 variable "parameter_group" {
